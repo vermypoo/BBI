@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OSINTBOB.xyz - Bikini Bottom Intelligence</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* (Same CSS as before, unchanged for brevity) */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0a0a0a;
+      color: #39ff14;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.teahub.io%2Fphotos%2Ffull%2F127-1276644_spongebob-movie-bikini-bottom.jpg&f=1&nofb=1&ipt=a661461965c0b9416e33dcd84ec70f64e4fc7eb9c03ba6a9044d8d7b3a923f8e') no-repeat center center fixed;
+      background-size: cover;
+      background-position: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.2rem;
+      color: #ffee58;
+      text-shadow: 2px 2px #f06292;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #ffcc80;
+      text-align: center;
+      max-width: 600px;
+    }
+
+    .input-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 2rem;
+      border: 2px dashed #ffeb3b;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #fbc02d;
+      max-width: 700px;
+      width: 90%;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 1.1rem;
+      background-color: #111;
+      color: #00ff90;
+      border: 2px solid #f48fb1;
+      border-radius: 5px;
+      outline: none;
+      font-family: monospace;
+    }
+
+    .terminal {
+      margin-top: 2rem;
+      background-color: #111;
+      width: 100%;
+      padding: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ffeb3b;
+      box-shadow: inset 0 0 10px #000;
+      min-height: 180px;
+    }
+
+    .terminal p {
+      margin: 0.5rem 0;
+      color: #00ff90;
+      white-space: pre-wrap;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+      width: 100%;
+    }
+
+    .tool {
+      background-color: #111;
+      border: 1px solid #f48fb1;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      color: #ffee58;
+      box-shadow: 0 0 10px #f06292;
+      transition: transform 0.2s, background-color 0.2s;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .tool:hover {
+      transform: scale(1.05);
+      background-color: #222;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 1rem;
+      text-align: center;
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
+    .gif-bg {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 180px;
+      z-index: 0;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+  <h1>OSINTBOB.xyz 🧽</h1>
+  <div class="subtitle">Bikini Bottom's most questionable intelligence hub</div>
+
+  <div class="input-wrapper">
+    <input id="searchBox" type="text" placeholder="🔍 e.g. 'Krabby Patty formula leaks' (does nothing)">
+    <div class="terminal" id="terminal">
+      <p>osintbob@bikini-bottom:~$ booting intel tools...</p>
+      <p>osintbob@bikini-bottom:~$ interface loaded.</p>
+    </div>
+
+    <div class="tools-grid">
+      <div class="tool" data-placeholder="Search for SpongeBob aliases...">🍍 SpongeName Lookup</div>
+      <div class="tool" data-placeholder="Track Mr. Krabs' shell corporations...">🦀 Crab-Tracker</div>
+      <div class="tool" data-placeholder="Investigate Patty ingredients...">🔍 Patty Ingredient OSINT</div>
+      <div class="tool" data-placeholder="Scan Gary's SnailSocial activity...">🐚 SnailSocial Scanner</div>
+      <div class="tool" data-placeholder="Query Squidward's tentacle files...">🐙 Tentacle Database</div>
+      <div class="tool" data-placeholder="Krusty Kriminal Records database...">🍔 Krusty Kriminal Records</div>
+      <div class="tool" data-placeholder="Reverse search BikiniPhone number...">📞 BikiniPhone Reverse</div>
+      <div class="tool" data-placeholder="Lookup CoralMail inbox activity...">🪸 CoralMail Intel</div>
+      <div class="tool" data-placeholder="Analyze BubbleDevices remotely...">🔧 BubbleDevice Analyzer</div>
+      <div class="tool" data-placeholder="Scrape Fishbook social media...">🌊 Fishbook Scraper</div>
+    </div>
+  </div>
+
+  <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fpngimg.com%2Fuploads%2Fspongebob%2Fspongebob_PNG11.png&f=1&nofb=1&ipt=0fbdee4ee002e5344cd2f64a120d1a31ad612efafd7fd20353d97e3b0086d01a" class="gif-bg" alt="SpongeBob gif background">
+
+  <footer>*Not affiliated with SpongeBob SquarePants™ or Nickelodeon</footer>
+
+  <script>
+    const tools = document.querySelectorAll('.tool');
+    const searchBox = document.getElementById('searchBox');
+    const terminal = document.getElementById('terminal');
+
+    tools.forEach(tool => {
+      tool.addEventListener('click', () => {
+        const placeholder = tool.getAttribute('data-placeholder');
+        searchBox.placeholder = placeholder;
+      });
+    });
+
+    const fakeIPData = [
+      "IP Address: 192.168.1.69",
+      "ISP: ChumBucketFiber",
+      "Location: Bikini Bottom, Pacific Ocean",
+      "Latitude: 4.20",
+      "Longitude: -69.42",
+      "Operating System: CoralOS v7.3",
+      "Browser: Jellyfish Explorer 5.5",
+      "Suspicious activity: 14 dark net logins",
+      "Tor Usage: Detected 🌐",
+      "Linked Accounts: SpongeNet, KrabMail, FishBook",
+      "VPN: KelpVPN (weak encryption)",
+      "Last Login: June 17, 2025, 04:20AM Ocean Time",
+      "Warning: Krabby Patty secret formula access flagged",
+      "Exfiltration method: Bubble bursts via TCP",
+      "Under surveillance by: Sandy Cheeks Cyber Task Force"
+    ];
+
+    function typeLines(lines, delay = 500) {
+      terminal.innerHTML = ""; // Clear terminal
+      let index = 0;
+
+      function addLine() {
+        if (index < lines.length) {
+          const p = document.createElement('p');
+          p.textContent = lines[index];
+          terminal.appendChild(p);
+          index++;
+          setTimeout(addLine, delay);
+        }
+      }
+
+      addLine();
+    }
+
+    searchBox.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const input = searchBox.value.trim();
+        if (input.length > 0) {
+          const intro = [
+            `osintbob@bikini-bottom:~$ search "${input}"`,
+            `Gathering IP intel...`,
+            `Deploying net... please wait...`,
+            `Target locked. Details:`
+          ];
+          typeLines(intro.concat(fakeIPData), 400); // Adjust delay here
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
